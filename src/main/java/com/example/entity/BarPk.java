@@ -1,10 +1,12 @@
 package com.example.entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
-public class BarPk extends BarBasePk
+public class BarPk implements Serializable
 {
   private static final long serialVersionUID = -370843668302626497L;
 
@@ -26,7 +28,6 @@ public class BarPk extends BarBasePk
     this.recordCd = recordCd;
   }
 
-  @Override
   public Integer getSiteCd()
   {
     return siteCd;
